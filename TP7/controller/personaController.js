@@ -6,7 +6,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 var persona_db = require("model/persona.js");
-const { getNickname } = require("../model/persona");
+
 
 
 
