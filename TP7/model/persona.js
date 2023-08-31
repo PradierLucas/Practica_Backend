@@ -22,7 +22,7 @@ persona_db.getNickname = function (dni, resultado) {
     connection.query(consulta, dni, (err, result) => {
         if (err) {
             resultado({
-                message: "No se pudo mostrar la persona",
+                message: "No se pudo encontrar el nickname del usuario con ese dni",
                 detail: err
             });
         } else {

@@ -18,8 +18,8 @@ var usuario_db = {};
 //crear usuario
 
 usuario_db.crear = function (usuario, retorno) {
-    consulta = "INSERT INTO USUARIO (mail, nickname, password) VALUES (?,?,?);";
-    parametros = [usuario.mail, usuario.nickname, usuario.password];
+    consulta = "INSERT INTO USUARIO (mail, nickname, password,persona_dni) VALUES (?,?,?,?);";
+    parametros = [usuario.mail, usuario.nickname, usuario.password, usuario.persona_dni];
 
     connection.query(consulta, parametros, (err) => {
         if (err) {
@@ -63,7 +63,7 @@ usuario_db.getAll = function (retorno) {
 
 usuario_db.actualizar = function (user, id, retorno) {
     parametros = [user.mail, user.nickname, user.password, id]
-    consulta = "UPDATE USUARIO set mail = ?, nickname = ?, password = ? WHERE nickname = ?;";
+    consulta = "UPDATE USUARIO set mail = ?, nickname = ?, password = ?, persona_dni=? WHERE nickname = ?;";
 
     connection.query(consulta, parametros, (err) => {
         if (err) {
